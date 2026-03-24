@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+:root {
+  --bg-dark: #0f111a;
+  --bg-panel: #161823;
+  --text-primary: #ffffff;
+  --text-secondary: #a0a5ba;
+  --accent-cyan: #00f0ff;
+  --accent-purple: #9d4edd;
+  --accent-gradient: linear-gradient(135deg, var(--accent-purple), var(--accent-cyan));
+  --neon-glow: 0 0 20px rgba(0, 240, 255, 0.4);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Glassmorphism utility */
+.glass {
+  background: rgba(22, 24, 35, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+}
+
+.text-gradient {
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--bg-panel);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-purple);
+}
+
+/* Glowing Inputs */
+.input-glow:focus {
+  outline: none;
+  border-color: var(--accent-cyan);
+  box-shadow: var(--neon-glow);
+}
+
+/* Fancy Buttons */
+.btn-primary {
+  background: var(--accent-gradient);
+  color: white;
+  border: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(157, 78, 221, 0.4);
+}
+
+/* 3D Canvas Container */
+.canvas-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* 3D Animated Text */
+.text-3d-animated {
+  font-weight: 900;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: float-3d 4s ease-in-out infinite, color-shift 8s linear infinite;
+  display: inline-block;
+  transform-style: preserve-3d;
+}
+
+@keyframes float-3d {
+  0%, 100% {
+    transform: perspective(600px) rotateX(10deg) rotateY(-10deg) translateZ(0px);
+    text-shadow: 
+      1px 1px 0 #9d4edd, 2px 2px 0 #8b3cce, 3px 3px 0 #792baf, 
+      4px 4px 0 #681a91, 5px 5px 0 #560872,
+      6px 6px 10px rgba(0,0,0,0.4), 10px 10px 20px rgba(0,240,255,0.3);
+  }
+  50% {
+    transform: perspective(600px) rotateX(20deg) rotateY(10deg) translateZ(30px);
+    text-shadow: 
+      2px 2px 0 #00f0ff, 4px 4px 0 #00d5e2, 6px 6px 0 #00bac5, 
+      8px 8px 0 #009fa8, 10px 10px 0 #00838b,
+      12px 12px 20px rgba(0,0,0,0.5), 15px 15px 30px rgba(157,78,221,0.4);
+  }
+}
+
+@keyframes color-shift {
+  0% { color: #ffffff; }
+  25% { color: #e0faff; }
+  50% { color: #f4e6ff; }
+  75% { color: #e0faff; }
+  100% { color: #ffffff; }
+}
