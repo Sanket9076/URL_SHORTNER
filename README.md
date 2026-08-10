@@ -1,20 +1,20 @@
 # URL Shortener
 
-A modern full-stack URL shortening application built with React, Vite, Node.js, Express, and MongoDB.
+A modern full-stack URL shortening application built with React, Vite, Java, Spring Boot, and MongoDB.
 
 ## Demo
 
 ![URL Shortener Demo](demo.webp)
 
 ## Features
-- **User Authentication**: Secure sign up and login functionality using JWT and bcrypt.
+- **User Authentication**: Secure sign up and login functionality using JWT and Spring Security.
 - **URL Shortening**: Convert long, clunky URLs into short, easy-to-manage links.
 - **Link Management**: View your entire history of shortened links along with the total number of clicks each link has received on your personal dashboard.
 - **Modern UI**: Clean, responsive, and dynamic interface featuring 3D animated background typography using Three.js and fluid animations via Framer Motion.
 
 ## Tech Stack
 **Frontend**: React 18, Vite, Tailwind CSS, Framer Motion, React Three Fiber, React Router, Redux Toolkit
-**Backend**: Node.js, Express.js, MongoDB, Mongoose, JSON Web Tokens (JWT)
+**Backend**: Java 21, Spring Boot 3, Spring Security, Spring Data MongoDB, JSON Web Tokens (JWT)
 
 ## Getting Started
 
